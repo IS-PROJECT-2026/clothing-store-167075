@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KITU. — everyday wear, deliberately made</title>
+<meta name="description" content="KITU. is a small clothing store for pieces you'll actually reach for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style .css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">KITU<span class="dot">.</span></a>
+
+      <nav class="nav" id="siteNav">
+        <a href="index.html" class="active">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Cart">
+          Bag <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Small batch &middot; Nairobi</p>
+      <h1>Everyday wear,<br>deliberately made.</h1>
+      <p class="hero-sub">No seasons, no hype drops — just pieces designed to be worn until they fall apart.</p>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+        <span>TOPS</span><span>OUTERWEAR</span><span>BOTTOMS</span><span>ACCESSORIES</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap shop">
+
+    <div class="shop-controls">
+      <div class="filters" id="filters">
+        <button class="chip active" data-category="all">All</button>
+        <button class="chip" data-category="tops">Tops</button>
+        <button class="chip" data-category="outerwear">Outerwear</button>
+        <button class="chip" data-category="bottoms">Bottoms</button>
+        <button class="chip" data-category="accessories">Accessories</button>
+      </div>
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search the rack…" aria-label="Search products">
+      </div>
+    </div>
+
+    <p class="result-count" id="resultCount"></p>
+
+    <div class="product-grid" id="product-grid">
+      <!-- product cards injected by script.js -->
+    </div>
+
+    <p class="empty-state" id="emptyState" hidden>Nothing matches that. Try another word or category.</p>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="logo footer-logo">KITU<span class="dot">.</span></p>
+        <p class="footer-tag">Everyday wear, deliberately made.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Shop</h4>
+          <a href="index.html">All products</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <p>Nairobi, Kenya</p>
+          <p>hello@kitu.example</p>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 KITU. Built for a Git &amp; GitHub coursework project.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

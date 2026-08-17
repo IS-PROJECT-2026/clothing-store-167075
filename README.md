@@ -1,0 +1,1 @@
+This is a simple HTML, CSS website for a clothing store.
