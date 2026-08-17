@@ -81,7 +81,7 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 ### D. Pull Requests & Traceability
 *Provide a screenshot of a completed or open Pull Request (PR) on GitHub that clearly shows it is linked to a related development issue.*
 
-[PASTE YOUR PULL REQUEST SCREENSHOT DIRECTLY HERE]
+<img width="1874" height="835" alt="image" src="https://github.com/user-attachments/assets/2aa718aa-3007-403a-8721-9d585f69c9d0" />
 
 * **Caption:** The completed pull request for the bag feature is a clear example of issue traceability: a feature branch was created, the branch was merged into the protected main branch through a PR, and the final work is tied to the corresponding issue and commit history.
 
