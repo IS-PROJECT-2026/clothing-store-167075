@@ -67,7 +67,7 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 ### B. Project Board
 *Provide a screenshot of your GitHub Project Board with your issues organized dynamically across columns (To Do, In Progress, Done).*
 
-[PASTE YOUR PROJECT BOARD SCREENSHOT DIRECTLY HERE]
+<img width="1914" height="835" alt="image" src="https://github.com/user-attachments/assets/1424a014-8f97-4227-8313-6f711c7a6f5b" />
 
 * **Caption:** The board reflected a simple issue flow from planning to completion, with tasks moving from To Do into In Progress and finally Done as the storefront features were implemented and validated.
 
