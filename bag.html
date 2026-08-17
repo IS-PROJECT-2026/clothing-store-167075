@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — KITU.</title>
+<title>Bag — KITU.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style .css">
@@ -16,7 +16,7 @@
 
       <nav class="nav" id="siteNav">
         <a href="index.html">Shop</a>
-        <a href="about.html" class="active">About</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
 
@@ -31,35 +31,28 @@
     </div>
   </header>
 
-  <main class="wrap about-page">
-    <p class="eyebrow">About the studio</p>
-    <h1>We make the things<br>we couldn't find.</h1>
+  <main class="wrap bag-page">
+    <p class="eyebrow">Your bag</p>
+    <div class="bag-header-row">
+      <h1>Ready to check out.</h1>
+      <button id="clearBag" class="clear-bag-btn" type="button">Clear bag</button>
+    </div>
 
-    <div class="about-grid">
-      <p class="about-lede">
-        KITU started as a small tailoring project between friends who were tired of
-        choosing between fast fashion and prices that didn't make sense for a
-        student budget. Every piece is designed in Nairobi, cut in small batches,
-        and built to survive more washes than it has any right to.
-      </p>
+    <div class="bag-layout">
+      <section class="bag-items" id="bagItems"></section>
 
-      <div class="about-facts">
-        <div class="fact">
-          <span class="fact-num">01</span>
-          <h3>Small batches</h3>
-          <p>We restock instead of overproducing — fewer sizes go to waste.</p>
+      <aside class="bag-summary">
+        <h2>Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="bagSubtotal">KES 0</strong>
         </div>
-        <div class="fact">
-          <span class="fact-num">02</span>
-          <h3>Local first</h3>
-          <p>Cut and sewn by tailors within Nairobi, not shipped in from a warehouse.</p>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="bagTotal">KES 0</strong>
         </div>
-        <div class="fact">
-          <span class="fact-num">03</span>
-          <h3>Built to last</h3>
-          <p>Reinforced seams and honest fabric — no piece is designed to fall apart on purpose.</p>
-        </div>
-      </div>
+        <button class="checkout-btn" type="button">Checkout</button>
+      </aside>
     </div>
   </main>
 

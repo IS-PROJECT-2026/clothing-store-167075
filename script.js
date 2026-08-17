@@ -1,3 +1,4 @@
+const STORAGE_KEY = 'kitu-bag';
 const grid = document.getElementById('product-grid');
 const resultCount = document.getElementById('resultCount');
 const emptyState = document.getElementById('emptyState');
@@ -5,9 +6,36 @@ const searchInput = document.getElementById('searchInput');
 const filterButtons = document.querySelectorAll('.chip');
 const toast = document.getElementById('toast');
 const cartCount = document.getElementById('cartCount');
+const bagItemsContainer = document.getElementById('bagItems');
+const bagSubtotal = document.getElementById('bagSubtotal');
+const bagTotal = document.getElementById('bagTotal');
+const clearBagButton = document.getElementById('clearBag');
 
 let activeCategory = 'all';
 let cartItems = 0;
+
+function loadBag() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveBag(items) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+}
+
+function updateCartCount() {
+  const items = loadBag();
+  const total = items.reduce((sum, item) => sum + (Number(item.quantity) || 1), 0);
+
+  cartItems = total;
+
+  if (cartCount) {
+    cartCount.textContent = String(total);
+  }
+}
 
 function formatPrice(value) {
   return new Intl.NumberFormat('en-KE', {
@@ -27,6 +55,89 @@ function showToast(message) {
   showToast.timeoutId = setTimeout(() => {
     toast.classList.remove('show');
   }, 1800);
+}
+
+function addToBag(productId) {
+  const product = PRODUCTS.find((item) => item.id === productId);
+  if (!product) return;
+
+  const bag = loadBag();
+  const existingItem = bag.find((item) => item.id === productId);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    bag.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.img,
+      category: product.category,
+      quantity: 1,
+    });
+  }
+
+  saveBag(bag);
+  updateCartCount();
+  showToast(`${product.name} added to bag`);
+}
+
+function renderBagPage() {
+  if (!bagItemsContainer) return;
+
+  const bag = loadBag();
+
+  if (!bag.length) {
+    bagItemsContainer.innerHTML = `
+      <div class="empty-bag">
+        <p>Your bag is empty.</p>
+        <a href="index.html" class="empty-bag-link">Continue shopping</a>
+      </div>
+    `;
+
+    if (bagSubtotal) bagSubtotal.textContent = formatPrice(0);
+    if (bagTotal) bagTotal.textContent = formatPrice(0);
+    return;
+  }
+
+  const total = bag.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  bagItemsContainer.innerHTML = bag
+    .map(
+      (item) => `
+        <div class="bag-item">
+          <img src="${item.image}" alt="${item.name}" class="bag-item-image">
+          <div class="bag-item-details">
+            <div>
+              <p class="bag-item-category">${item.category}</p>
+              <h3>${item.name}</h3>
+            </div>
+            <div class="bag-item-controls">
+              <span>Qty: ${item.quantity}</span>
+              <button type="button" class="bag-remove" data-id="${item.id}">Remove</button>
+            </div>
+          </div>
+          <div class="bag-item-price">${formatPrice(item.price * item.quantity)}</div>
+        </div>
+      `
+    )
+    .join('');
+
+  if (bagSubtotal) bagSubtotal.textContent = formatPrice(total);
+  if (bagTotal) bagTotal.textContent = formatPrice(total);
+}
+
+function removeFromBag(productId) {
+  const bag = loadBag().filter((item) => item.id !== productId);
+  saveBag(bag);
+  updateCartCount();
+  renderBagPage();
+}
+
+function clearBag() {
+  saveBag([]);
+  updateCartCount();
+  renderBagPage();
 }
 
 function renderProducts() {
@@ -91,19 +202,24 @@ function bindEvents() {
 
   document.addEventListener('click', (event) => {
     const addButton = event.target.closest('.add-to-cart');
-    if (!addButton) return;
-
-    cartItems += 1;
-
-    if (cartCount) {
-      cartCount.textContent = String(cartItems);
+    if (addButton) {
+      addToBag(Number(addButton.dataset.id));
+      return;
     }
 
-    const productId = Number(addButton.dataset.id);
-    const product = PRODUCTS.find((item) => item.id === productId);
-    showToast(product ? `${product.name} added to bag` : 'Added to bag');
+    const removeButton = event.target.closest('.bag-remove');
+    if (removeButton) {
+      removeFromBag(Number(removeButton.dataset.id));
+      return;
+    }
+
+    if (event.target.closest('#clearBag')) {
+      clearBag();
+    }
   });
 }
 
+updateCartCount();
 bindEvents();
 renderProducts();
+renderBagPage();
