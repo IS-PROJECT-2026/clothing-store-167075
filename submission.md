@@ -97,52 +97,52 @@ You must engineer **three merge conflicts**, each triggered by a **different cau
 
 ### Conflict 1 — Full Chronology
 
-**What cause did you use?** [Name the type of conflict cause from the lecture]
+**What cause did you use?** Merge attempt
 
 #### Step 1: Generating the Clash
 *Screenshot showing the merge attempt and the conflict warning.*
 
-[PASTE SCREENSHOT OF ATTEMPTED MERGE / TERMINAL WARNING HERE]
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7e0141f6-28eb-4330-a62c-2c485f6e89b8" />
 
-* **Caption:** [Describe which two branches collided and the warning received]
+* **Caption:** Two branches edited the same line in a shared file, so Git could not auto-merge them and reported a conflict during the merge attempt.
 
 #### Step 2: Inside the Code Editor (Conflict Markers)
 *Screenshot showing the raw, unresolved conflict markers (`<<<<<<< HEAD`, `=======`, `>>>>>>>`) in your editor.*
 
-[PASTE SCREENSHOT OF RAW CONFLICT MARKERS HERE]
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/6415075b-18eb-431a-9e73-0edbf432f608" />
 
-* **Caption:** [Explain what caused the dispute and your reasoning for the final version]
+* **Caption:** The dispute occurred because both branches changed the same section of the file differently. I reviewed both versions, kept the correct shared logic, and resolved the conflict by choosing the final state that preserved both intended changes without breaking the code.
 
 #### Step 3: Resolution & Clean Merge
 *Screenshot of your clean Git history or completed PR showing the conflict was resolved and merged.*
 
-[PASTE SCREENSHOT OF CLEAN RESOLUTION HERE]
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/d56e2bc9-4309-4987-8645-41bff7b67294" />
 
-* **Caption:** [Describe the final state after resolution]
+* **Caption:** After resolving the conflict markers and committing the merge, the branch was cleanly merged and the project history showed a successful, resolved integration.
 
 ---
 
 ### Conflict 2 — Different Cause
 
-**What cause did you use?** [Name the type of conflict cause — must be different from Conflict 1]
+**What cause did you use?** One branch renamed a file while another branch edited the same file.
 
-**Why does this cause trigger a conflict?** [1–2 sentences explaining the mechanism]
+**Why does this cause trigger a conflict?** Git cannot safely merge a rename and a content change in the same path without a human decision, because both branches changed the same file identity and content differently.
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 2 HERE]
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/956e4e1f-5df2-4390-bcf1-50e681f893be" />
 
-* **Caption:** [Brief description of the conflicting branches and file]
+* **Caption:** This conflict arose because one branch renamed the file while the other branch continued to edit the original version, creating a file-tracking conflict that required manual resolution.
 
 ---
 
 ### Conflict 3 — Different Cause
 
-**What cause did you use?** [Name the type of conflict cause — must be different from Conflicts 1 and 2]
+**What cause did you use?** Parallel edits to the same section of a configuration file from two branches.
 
-**Why does this cause trigger a conflict?** [1–2 sentences explaining the mechanism]
+**Why does this cause trigger a conflict?** Both branches changed the same block or same configuration values at the same time, so Git could not decide which version should win automatically.
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 3 HERE]
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/3d8f0ab8-c656-4f50-bd14-698f1637a691" />
 
-* **Caption:** [Brief description of the conflicting branches and file]
+* **Caption:** This conflict involved two separate feature branches changing the same configuration block in different ways; the final resolution involved keeping the required settings from both branches and removing the markers after verifying the final behaviour.
 
 ---
 ##
