@@ -60,7 +60,7 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 ### A. Milestones and Issues
 *Provide a screenshot showing your active milestone(s) and the granular tracking issues linked directly to them.*
 
-[PASTE YOUR MILESTONE SCREENSHOT DIRECTLY HERE]
+<img width="1560" height="588" alt="image" src="https://github.com/user-attachments/assets/792be663-5cb9-4226-9c19-cb1d17bc5651" />
 
 * **Caption:** The project used milestone-based issue tracking for the storefront build, including feature work such as the catalogue, responsive styling, mobile navigation, and bag functionality, each mapped to a specific issue and resolved through the project workflow.
 
