@@ -62,28 +62,28 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 
 [PASTE YOUR MILESTONE SCREENSHOT DIRECTLY HERE]
 
-* **Caption:** [Write a brief sentence describing your milestones here]
+* **Caption:** The project used milestone-based issue tracking for the storefront build, including feature work such as the catalogue, responsive styling, mobile navigation, and bag functionality, each mapped to a specific issue and resolved through the project workflow.
 
 ### B. Project Board
 *Provide a screenshot of your GitHub Project Board with your issues organized dynamically across columns (To Do, In Progress, Done).*
 
 [PASTE YOUR PROJECT BOARD SCREENSHOT DIRECTLY HERE]
 
-* **Caption:** [Write a brief sentence describing your board state here]
+* **Caption:** The board reflected a simple issue flow from planning to completion, with tasks moving from To Do into In Progress and finally Done as the storefront features were implemented and validated.
 
 ### C. Branching Architecture
 *Provide a screenshot showing your local or remote Git branch list, highlighting your use of conventional, issue-linked naming patterns (e.g., `feat/`, `fix/`, `style/`).*
 
 [PASTE YOUR BRANCHING SCREENSHOT DIRECTLY HERE]
 
-* **Caption:** [Write a brief sentence describing your branch list here]
+* **Caption:** The repository followed a conventional branch naming pattern such as `feat/bag-page`, while the main branch remained protected and merged only through pull requests, keeping the workflow issue-linked and reviewable.
 
 ### D. Pull Requests & Traceability
 *Provide a screenshot of a completed or open Pull Request (PR) on GitHub that clearly shows it is linked to a related development issue.*
 
 [PASTE YOUR PULL REQUEST SCREENSHOT DIRECTLY HERE]
 
-* **Caption:** [Write a brief sentence describing your PR and what issue it closes]
+* **Caption:** The completed pull request for the bag feature is a clear example of issue traceability: a feature branch was created, the branch was merged into the protected main branch through a PR, and the final work is tied to the corresponding issue and commit history.
 
 ---
 
