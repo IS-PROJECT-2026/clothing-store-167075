@@ -74,7 +74,7 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 ### C. Branching Architecture
 *Provide a screenshot showing your local or remote Git branch list, highlighting your use of conventional, issue-linked naming patterns (e.g., `feat/`, `fix/`, `style/`).*
 
-[PASTE YOUR BRANCHING SCREENSHOT DIRECTLY HERE]
+<img width="1919" height="811" alt="image" src="https://github.com/user-attachments/assets/a6cbd906-b79d-499e-bc8e-24d2ec0aa4c5" />
 
 * **Caption:** The repository followed a conventional branch naming pattern such as `feat/bag-page`, while the main branch remained protected and merged only through pull requests, keeping the workflow issue-linked and reviewable.
 
